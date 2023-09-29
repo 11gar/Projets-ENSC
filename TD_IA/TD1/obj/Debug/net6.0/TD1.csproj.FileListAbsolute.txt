@@ -1,0 +1,15 @@
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\bin\Debug\net6.0\TD1.exe
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\bin\Debug\net6.0\TD1.deps.json
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\bin\Debug\net6.0\TD1.runtimeconfig.json
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\bin\Debug\net6.0\TD1.dll
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\bin\Debug\net6.0\TD1.pdb
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\obj\Debug\net6.0\TD1.csproj.AssemblyReference.cache
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\obj\Debug\net6.0\TD1.GeneratedMSBuildEditorConfig.editorconfig
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\obj\Debug\net6.0\TD1.AssemblyInfoInputs.cache
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\obj\Debug\net6.0\TD1.AssemblyInfo.cs
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\obj\Debug\net6.0\TD1.csproj.CoreCompileInputs.cache
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\obj\Debug\net6.0\TD1.dll
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\obj\Debug\net6.0\refint\TD1.dll
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\obj\Debug\net6.0\TD1.pdb
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\obj\Debug\net6.0\TD1.genruntimeconfig.cache
+H:\AAPERSO\Projets-ENSC\TD_IA\TD1\obj\Debug\net6.0\ref\TD1.dll
