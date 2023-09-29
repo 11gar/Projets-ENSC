@@ -15,7 +15,6 @@ public class Detecteur
         }
         if (ext[0] == 0 && ext[1] == 0 && ext[2] == 1 && ext[3] == 1)
         {
-
             Console.WriteLine("le nombre est 2 ou 5");
         }
         if (ext[0] == 0 && ext[1] == 0 && ext[2] == 3 && ext[3] == 0)
@@ -30,7 +29,6 @@ public class Detecteur
         {
             Console.WriteLine("le nombre est 6");
         }
-
         if (ext[0] == 0 && ext[1] == 0 && ext[2] == 0 && ext[3] == 0)
         {
             if (maxRelations(matrix) == 2)
@@ -42,9 +40,6 @@ public class Detecteur
                 Console.WriteLine("le nombre est 8");
             }
         }
-
-
-
         if (ext[0] == 0 && ext[1] == 0 && ext[2] == 1 && ext[3] == 0)
         {
             if (maxRelations(matrix) == 2)
