@@ -56,79 +56,39 @@ public class Functions
         return null;
     }
 
-    public int nbExtGauche(char[,] matrix)
+    public void afficherNombre(char[,] matrice)
     {
-        int nb = 0;
-        for (int i = 0; i < matrix.GetLength(0); i++)
+        Console.Clear();
+        Console.SetCursorPosition(0, 0);
+        for (int i = 0; i < matrice.GetLength(0); i++)
         {
-            if (nbADroite(matrix, i) == 0)
-                nb++;
+            for (int j = 0; j < matrice.GetLength(1); j++)
+            {
+                Console.Write(" ");
+            }
+            Console.WriteLine();
         }
-        return nb;
-    }
-    public int nbExtHaute(char[,] matrix)
-    {
-        int nb = 0;
-        for (int i = 0; i < matrix.GetLength(0); i++)
+        Console.SetCursorPosition(0, 0);
+        int coef = 1;
+        for (int i = 0; i < matrice.GetLength(0); i++)
         {
-            if ((nbEnBas(matrix, i) == 0) && (nbADroite(matrix, i) == 0) && (nbAGauche(matrix, i) == 0))
-                nb++;
+            for (int j = 0; j < matrice.GetLength(1); j++)
+            {
+                if (matrice[i, j] == 'd')
+                {
+                    Console.SetCursorPosition(i * coef, j * coef);
+                    Console.Write("-");
+                }
+                if (matrice[i, j] == 'b')
+                {
+                    Console.SetCursorPosition(i * coef, j * coef);
+                    Console.Write("|");
+                }
+            }
+            Console.WriteLine();
         }
-        return nb;
-    }
-    public int nbExtBas(char[,] matrix)
-    {
-        int nb = 0;
-        for (int i = 0; i < matrix.GetLength(0); i++)
-        {
-            if ((nbEnHaut(matrix, i) == 0) && (nbADroite(matrix, i) == 0) && (nbAGauche(matrix, i) == 0))
-                nb++;
-        }
-        return nb;
-    }
-    public int nbADroite(char[,] matrix, int n)
-    {
-        int nb = 0;
-        for (int i = 0; i < matrix.GetLength(0); i++)
-        {
-            if (matrix[n, i] == 'd' || matrix[n, i] == 'D')
-                nb++;
-        }
-        return nb;
     }
 
-    public int nbAGauche(char[,] matrix, int n)
-    {
-        int nb = 0;
-        for (int i = 0; i < matrix.GetLength(0); i++)
-        {
-            if (matrix[i, n] == 'd' || matrix[i, n] == 'D')
-                nb++;
-        }
-        return nb;
-    }
-
-    public int nbEnBas(char[,] matrix, int n)
-    {
-        int nb = 0;
-        for (int i = 0; i < matrix.GetLength(0); i++)
-        {
-            if (matrix[n, i] == 'b' || matrix[n, i] == 'B')
-                nb++;
-        }
-        return nb;
-    }
-
-    public int nbEnHaut(char[,] matrix, int n)
-    {
-        int nb = 0;
-        for (int i = 0; i < matrix.GetLength(0); i++)
-        {
-            if (matrix[i, n] == 'b' || matrix[i, n] == 'B')
-                nb++;
-        }
-        return nb;
-    }
 
 
 }

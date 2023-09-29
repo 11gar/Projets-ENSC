@@ -1,12 +1,11 @@
 ﻿
 Functions f = new Functions();
+Detecteur D = new Detecteur();
 
 char[,] matrice = f.getMatrix("4.txt");
-f.afficherMatrice(matrice);
-
-int nb = f.nbExtHaute(matrice);
-int nb2 = f.nbExtBas(matrice);
-Console.WriteLine(nb2);
+//f.afficherMatrice(matrice);
+f.afficherNombre(matrice);
+D.QuelNombre(matrice);
 
 
 
