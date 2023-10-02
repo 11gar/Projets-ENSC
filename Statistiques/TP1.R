@@ -1,0 +1,2 @@
+load("appartements.Rda");
+appartements
