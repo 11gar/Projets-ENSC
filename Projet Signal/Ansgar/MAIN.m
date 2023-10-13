@@ -17,7 +17,7 @@ normeBin=binarize(norme,20);
 %%
 [indexBleue,map2]=rgb2ind(briqueBleue,255);
 indexBleue=binarize(indexBleue,0.5);
-indexBleue=convolutionCouleurs(indexBleue,9,"valid");
+indexBleue=convolutionCouleurs(indexBleue,12,"valid");
 indexBleue=binarize(indexBleue,0.5);
 
 [X,Y,norme] = trouvercontours(indexBleue,2);
@@ -44,8 +44,8 @@ line([xmid,xmid-ortho(1)],[ymid,ymid-ortho(2)],'color','red')
 line([x(1),x(1)+vect(1)],[y(1),y(1)+vect(2)],'color','red')
 
 %%
-figure(2), imagesc(normeBin), colormap("gray");
-figure(3), imagesc(briqueBleue),colormap("jet");
+%figure(2), imagesc(normeBin), colormap("gray");
+%figure(3), imagesc(briqueBleue),colormap("jet");
 %figure(5),image(over),colormap("jet");
 figure(1),imshow(img);
 
@@ -54,9 +54,17 @@ xmid=(x(1)+x(2))/2;
 ymid=(y(1)+y(2))/2;
 vect=[(x(2)-x(1))/(sqrt((x(2)-x(1))^2+(y(2)-y(1))^2)),(y(2)-y(1))/(sqrt((x(2)-x(1))^2+(y(2)-y(1))^2))].*30
 ortho=null(vect(:).').*50;
-line(x,y);
+line(x,y,'color','red');
 %line([xmid,xmid-ortho(1)],[ymid,ymid-ortho(2)],'color','red')
 %line([x(1),x(1)+vect(1)],[y(1),y(1)+vect(2)],'color','red')
-line()
+rectangleAutourDeLigne(x(1),y(1),x(2),y(2));
+
+[xp,yp]=ginput(1);
+if(estDansRectangle(xp,yp,x(1),y(1),x(2),y(2),x(1)+ortho(1)*5,y(1)+ortho(2)*5))
+
+else
+
+end
+
 %%
 
