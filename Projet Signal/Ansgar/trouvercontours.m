@@ -1,5 +1,4 @@
-function[Gx,Gy,norme] = trouvercontours(matrix)
-sigma=1;
+function[Gx,Gy,norme] = trouvercontours(matrix,sigma)
 [X,Y]=meshgrid(-sigma*3-0.5:0.5+sigma*3);
 Hx=-X.*exp(-(X.^2+Y.^2)/(2*sigma^2));
 Hy=-Y.*exp(-(X.^2+Y.^2)/(2*sigma^2));
