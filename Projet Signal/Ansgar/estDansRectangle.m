@@ -8,9 +8,6 @@ vecteurRectangle2=[x3-x1 y3-y1];
 
 if((dot(vecteurPoint,vecteurRectangle)<dot(vecteurRectangle,vecteurRectangle)) & (dot(vecteurPoint,vecteurRectangle)>0)&(dot(vecteurPoint,vecteurRectangle2)<dot(vecteurRectangle2,vecteurRectangle2)) & (dot(vecteurPoint,vecteurRectangle2)>0))
     res=true;
-    disp('true');
-    disp(dot(vecteurPoint,vecteurRectangle))
 else
     res=false;  
-    disp("false");
 end
