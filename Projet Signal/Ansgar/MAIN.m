@@ -93,17 +93,47 @@ moy=moy./nb;
 line([x(1),x(1)+moy(1)*moy(3)*20],[y(1),y(1)+moy(2)*moy(3)*20],'color',"white");
 
 %%
-
+clear all;
 imgTest=[ones(500),ones(500);zeros(500),zeros(500)];
 
-L = 50; %largeur du rectangle
+imshow(imgTest);
+%[x,y]=ginput(2);
+x=[0,0];
+y=[0,200];
+
+
+
+
+
+L = 1000; %largeur du rectangle
 p = 80; %pourcentage pris du segment
 %u, U, v, V
 U = 7;
-%u = pas allant de -7 à 7;
-V = 40;
-%v = pas allant de -40 à 40;
-Xi = [X(1), Y(1)];
-Xj = [X(2),Y(2)];
+V = 30;
+
+Xi = [x(1), y(1)];
+Xj = [x(2),y(2)];
 vectij = Xj - Xi;
-M = Xi + (0.5 + p*(u/(2*U)))*vectij + L*(v/(2*V))*orth(vectij/norm(vectij));
+ortho=null(vectij(:).');
+
+p=0.01*p;
+M=zeros(2*U,2*V);
+M(:,:,1)=0;
+M(:,:,2)=0;
+
+
+disp("---------start-----------")
+for u=-U:U
+    for v=-V:V
+        for i=1:2
+            disp("----tour------");
+            M(u+U+1,v+V+1,i) = (Xi(i) + (0.5 +p*(u/(2*U)))*vectij(i) + L*(v/(2*V))*ortho(i)/norm(vectij));
+            disp(M(u+U+1,v+V+1,i));
+        end
+    end
+end
+
+
+figure(3),plot(M(:,:,1),M(:,:,2),'+');
+
+%line([M(0,0),])
