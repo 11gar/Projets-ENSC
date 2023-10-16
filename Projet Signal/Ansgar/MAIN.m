@@ -98,7 +98,7 @@ imgTest=[ones(500),ones(500);zeros(500),zeros(500)];
 
 imshow(imgTest);
 %[x,y]=ginput(2);
-x=[0,0];
+x=[0,20];
 y=[0,200];
 
 
