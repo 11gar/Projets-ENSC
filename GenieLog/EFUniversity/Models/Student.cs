@@ -4,7 +4,7 @@ public class Student
     public string LastName { get; set; }
     public string FirstName { get; set; }
     public DateTime EnrollmentDate { get; set; }
-    public ICollection<Enrollment> Enrollments { get; set; }
+    public List<Enrollment> Enrollments { get; set; }
 
     public Student(int id, string lastName, string firstName, string enrollmentDate)
     {
