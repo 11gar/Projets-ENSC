@@ -5,21 +5,8 @@ public class Student
     public string FirstName { get; set; }
     public DateTime EnrollmentDate { get; set; }
     public List<Enrollment> Enrollments { get; set; }
-
-    public Student(int id, string lastName, string firstName, string enrollmentDate)
+    public override string ToString()
     {
-        Id = id;
-        LastName = lastName;
-        FirstName = firstName;
-        
-        if (DateTime.TryParse(enrollmentDate, out DateTime parsedEnrollmentDate))
-        {
-            EnrollmentDate = parsedEnrollmentDate;
-        }
-        else
-        {
-            EnrollmentDate = DateTime.MinValue;
-        }
-        Enrollments = new List<Enrollment>();
+        return(Id + " : "+FirstName+" "+LastName+" - "+EnrollmentDate);
     }
 }

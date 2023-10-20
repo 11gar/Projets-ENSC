@@ -5,12 +5,9 @@ public class Course
     public int Credits { get; set; }
     public List<Enrollment> Enrollments { get; set; }
 
-    public Course(int id, string title, int credits)
+    public override string ToString()
     {
-        Id = id;
-        Title = title;
-        Credits = credits;
-        Enrollments=new List<Enrollment>();
+        return("Cours "+Id+" : "+Title+" ("+Credits+" crédits)");
     }
 }
 
