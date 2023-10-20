@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ansgar\\Desktop\\2A\\Projets-ENSC\\GenieLog\\EFTodo\\EFTodo.csproj": {}
+    "C:\\Users\\Ansgar\\Desktop\\2A\\Projets-ENSC\\GenieLog\\EFUniversity\\EFUniversity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ansgar\\Desktop\\2A\\Projets-ENSC\\GenieLog\\EFTodo\\EFTodo.csproj": {
+    "C:\\Users\\Ansgar\\Desktop\\2A\\Projets-ENSC\\GenieLog\\EFUniversity\\EFUniversity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ansgar\\Desktop\\2A\\Projets-ENSC\\GenieLog\\EFTodo\\EFTodo.csproj",
-        "projectName": "EFTodo",
-        "projectPath": "C:\\Users\\Ansgar\\Desktop\\2A\\Projets-ENSC\\GenieLog\\EFTodo\\EFTodo.csproj",
+        "projectUniqueName": "C:\\Users\\Ansgar\\Desktop\\2A\\Projets-ENSC\\GenieLog\\EFUniversity\\EFUniversity.csproj",
+        "projectName": "EFUniversity",
+        "projectPath": "C:\\Users\\Ansgar\\Desktop\\2A\\Projets-ENSC\\GenieLog\\EFUniversity\\EFUniversity.csproj",
         "packagesPath": "C:\\Users\\Ansgar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ansgar\\Desktop\\2A\\Projets-ENSC\\GenieLog\\EFTodo\\obj\\",
+        "outputPath": "C:\\Users\\Ansgar\\Desktop\\2A\\Projets-ENSC\\GenieLog\\EFUniversity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ansgar\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dp1wpwPtI+wYKXRGEkgAVkJ4sBZIexstFS46T9Q52nZQJJHZR8F2HqBcVTbUxuDkrh4QfM2Y3u6v9t4hFq7UXA==",
+  "dgSpecHash": "xoDXkAZfZom7kvBELs9RPp8qvB2m8DHD7iUc3DyhDuMVc5zlxh2ougKBQSKPOvHyLmZ5ywzdYeU5U8gV9oaTnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ansgar\\Desktop\\2A\\Projets-ENSC\\GenieLog\\EFTodo\\EFTodo.csproj",
+  "projectFilePath": "C:\\Users\\Ansgar\\Desktop\\2A\\Projets-ENSC\\GenieLog\\EFUniversity\\EFUniversity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ansgar\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Ansgar\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.12\\microsoft.data.sqlite.core.7.0.12.nupkg.sha512",
