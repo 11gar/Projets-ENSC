@@ -99,20 +99,26 @@ namespace ProjetIA2022
             // matrice[x,y] indique le type de case  (-1 si bouée, 0 si rien, -2 si obstacle)
 
             double cost = 0;
-            int[] nextGoal = getNextGoal();
-            System.Diagnostics.Debug.WriteLine("coords : "+nextGoal[0]+" / "+nextGoal[1]);
-            cost = Math.Sqrt(Math.Pow(x - nextGoal[0], 2) + Math.Pow(y - nextGoal[1],2));
-            System.Diagnostics.Debug.WriteLine(cost);
-      
+            cost = ShortestPathFrom("s",1);
             return (cost);    
             }
 
-        public double ShortTimeFromNode()
-        {
+        public double ShortestPathFrom(string obj, int sens)
+            {
+            int[] goal;
+            if (obj == "start")
+            {
+                goal = getPreviousGoal();
+            }
+            else
+            {
+                goal= getNextGoal();
+            }
+            
             double time=0;
-            int sideNecessaire=Math.Abs(x-Form1.xfinal);
-            int upNecessaire=Math.Abs(y-Form1.yfinal);
-            int sensY=(y-Form1.yfinal>0?-1:1);
+            int sideNecessaire = Math.Abs(x - goal[0]);
+            int upNecessaire=Math.Abs(y-goal[1]);
+            int sensY=sens*(y-goal[1]>0?-1:1);
             int upAndSideNecessairee=0;
             if(sideNecessaire>upNecessaire)
             {
@@ -134,9 +140,9 @@ namespace ProjetIA2022
             {
                 time=upAndSideNecessairee*50+sideNecessaire*30+upNecessaire*50;
             }
-            return time;
+            return time ;
             
-        }
+            }
 
             public int[] getNextGoal()
             {
@@ -157,9 +163,33 @@ namespace ProjetIA2022
                 coords[1]=Form1.yfinal;
             }
 
+            return coords;
+            }
+
+            public int[] getPreviousGoal()
+            {
+            int[] coords = {0,0};
+            if (!bouee1 && !bouee2)
+            {
+                coords[0]=Form1.xinitial;
+                coords[1]=Form1.yinitial;
+            }
+            else if (bouee1 && !bouee2)
+            {
+                
+                coords[0]=Form1.xbouee1;
+                coords[1]=Form1.ybouee1;
+            }
+            else
+            {
+                coords[0]=Form1.xbouee2;
+                coords[1]=Form1.ybouee2;
+            }
+
 
             return coords;
             }
+        
 
             public override string ToString()
             {

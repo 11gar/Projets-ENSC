@@ -95,30 +95,31 @@ namespace ProjetIA2022
             int sideNecessaire=Math.Abs(x-Form1.xfinal);
             int upNecessaire=Math.Abs(y-Form1.yfinal);
             int sensY=(y-Form1.yfinal>0?-1:1);
-            int upAndSideNecessairee=0;
+            int upAndSideNecessaire=0;
             if(sideNecessaire>upNecessaire)
             {
-                upAndSideNecessairee = upNecessaire;
+                upAndSideNecessaire = upNecessaire;
                 sideNecessaire = sideNecessaire-upNecessaire;
                 upNecessaire=0;
             }
             else
             {
-                upAndSideNecessairee = sideNecessaire;
+                upAndSideNecessaire = sideNecessaire;
                 upNecessaire = upNecessaire-sideNecessaire;
                 sideNecessaire=0;
             }
             if(sensY>0)
             {
-                time=upAndSideNecessairee*20+sideNecessaire*30+upNecessaire*21;
+                time=upAndSideNecessaire*20+sideNecessaire*30+upNecessaire*21;
             }
             else
             {
-                time=upAndSideNecessairee*50+sideNecessaire*30+upNecessaire*50;
+                time=upAndSideNecessaire*50+sideNecessaire*30+upNecessaire*50;
             }
             return time;
             
         }
+
 
         public override string ToString()
         {
