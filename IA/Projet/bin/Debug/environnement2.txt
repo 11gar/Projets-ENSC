@@ -1,0 +1,6 @@
+nombre de lignes : 20
+nombre de colonnes : 20
+xbouee1: 6
+ybouee1 : 2
+xbouee2 : 14
+ybouee2 : 17
