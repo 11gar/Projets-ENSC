@@ -94,25 +94,9 @@ line([x(1),x(1)+moy(1)*moy(3)*20],[y(1),y(1)+moy(2)*moy(3)*20],'color',"white");
 
 %%
 clear all;
-vidObj = VideoReader("vidéo.mp4");
-
-img= read(vidObj,1);
-%img=img(500:700,600:800,:);
-%img=img(20:40,120:140,:);
-[imgIndex,map]=rgb2ind(img,255);
-%over=overline(A,1,1,1080,1920);
-
-
-
-briqueBleue=findexclusivecolor(img,38,60,174,20,20,20);
-briqueBlanche=findexclusivecolor(img,165,170,185,15,15,15);
-feuille = findexclusivecolor(img,128,168,177,70,70,70);
-%normeBin=binarize(norme,20);
-
 disp("-------------------------------")
 imgTest=[ones(500),ones(500);zeros(500),zeros(500)];
-
-figure(1),imshow(imgIndex,map);
+figure(1),imshow(imgTest);
 
 [x,y]=ginput(2);
 
@@ -132,7 +116,7 @@ M=zeros(2*U,2*V);
 M(:,:,1)=0;
 M(:,:,2)=0;
 
-[X,Y,norme] = trouvercontours(imgIndex,2);
+[X,Y,norme] = trouvercontours(imgTest,2);
 
 for u=-U:U
     for v=-V:V
@@ -147,8 +131,8 @@ end
 for u=-U:U
     for v=-V:V
         disp("tour");
-        xEtudie=min(M(u+U+1,v+V+1,1),size(imgIndex,1));
-        yEtudie=min(M(u+U+1,v+V+1,2),size(imgIndex,2));
+        xEtudie=M(u+U+1,v+V+1,1);
+        yEtudie=M(u+U+1,v+V+1,2);
         vecteur=[X(xEtudie,yEtudie)/norm(X(xEtudie,yEtudie),Y(xEtudie,yEtudie)),Y(xEtudie,yEtudie)/norm(X(xEtudie,yEtudie),Y(xEtudie,yEtudie))];
         disp(vecteur);
         disp(norme(xEtudie,yEtudie));
