@@ -115,12 +115,21 @@ imgTest=[ones(500),ones(500);zeros(500),zeros(500)];
 figure(1),image(imgIndex),colormap(map);
 
 [x,y]=ginput(4);
-M=formeMatrices(x(1),y(1),x(2),y(2),x(3));
-[X,Y,norme] = trouvercontours(imgIndex,2);
+[M1,M2,M3,M4]=formeMatrices(x(1),y(1),x(2),y(2),x(3),y(3),x(4),y(4));
+M01=quadrangle_from_points(imgIndex,x,y);
+
+[Xq,Yq,normeq] = trouvercontours(M01,4);
+[Xi,Yi] = trouvercontours(imgIndex,4);
+
+figure(2),image(abs(Xi)+abs(Yi));
+figure(3),image(abs(Xq)+abs(Yq));
 
 %line([M(1,1,1),M(size(M,1),size(M,2),1)],[M(1,1,2),M(size(M,1),size(M,2),2)]);
 hold on
-plot(M(:,:,1),M(:,:,2),'+');
+plot(M1(:,:,1),M1(:,:,2),'+');
+plot(M2(:,:,1),M2(:,:,2),'+');
+plot(M3(:,:,1),M3(:,:,2),'+');
+plot(M4(:,:,1),M4(:,:,2),'+');
 hold off
 
 

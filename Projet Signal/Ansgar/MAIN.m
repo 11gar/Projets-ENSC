@@ -106,6 +106,7 @@ img= read(vidObj,1);
 
 briqueBleue=findexclusivecolor(img,38,60,174,20,20,20);
 briqueBlanche=findexclusivecolor(img,165,170,185,15,15,15);
+imgIndex=rgb2ind(briqueBlanche,255);
 feuille = findexclusivecolor(img,128,168,177,70,70,70);
 %normeBin=binarize(norme,20);
 
@@ -116,7 +117,13 @@ figure(1),image(imgIndex),colormap(map);
 
 [x,y]=ginput(4);
 [M1,M2,M3,M4]=formeMatrices(x(1),y(1),x(2),y(2),x(3),y(3),x(4),y(4));
-[X,Y,norme] = trouvercontours(imgIndex,2);
+M01=quadrangle_from_points(imgIndex,x,y);
+
+[Xq,Yq,normeq] = trouvercontours(M01,4);
+[Xi,Yi,normei] = trouvercontours(imgIndex,4);
+
+figure(2),imagesc(normeq);
+figure(3),imagesc(normei);
 
 %line([M(1,1,1),M(size(M,1),size(M,2),1)],[M(1,1,2),M(size(M,1),size(M,2),2)]);
 hold on

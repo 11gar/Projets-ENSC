@@ -5,7 +5,7 @@ L = 1000; %largeur du rectangle
 p = 80; %pourcentage pris du segment
 %u, U, v, V
 U = 7;
-V = 30;
+V = 50;
 
 Xi = [x(1), y(1)];
 Xj = [x(2),y(2)];

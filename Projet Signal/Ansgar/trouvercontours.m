@@ -5,3 +5,5 @@ Hy=-Y.*exp(-(X.^2+Y.^2)/(2*sigma^2));
 Gx=conv2(matrix,Hx,'same');
 Gy=conv2(matrix,Hy,'same');
 norme=((Gx.*Gx+Gy.*Gy).^0.5)/sigma;
+Gx=Gx.*norme;
+Gy=Gy.*norme;
