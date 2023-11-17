@@ -1,0 +1,5 @@
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\GenieLog\EFUniversity\obj\Debug\net6.0\EFUniversity.csproj.AssemblyReference.cache
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\GenieLog\EFUniversity\obj\Debug\net6.0\EFUniversity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\GenieLog\EFUniversity\obj\Debug\net6.0\EFUniversity.AssemblyInfoInputs.cache
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\GenieLog\EFUniversity\obj\Debug\net6.0\EFUniversity.AssemblyInfo.cs
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\GenieLog\EFUniversity\obj\Debug\net6.0\EFUniversity.csproj.CoreCompileInputs.cache
