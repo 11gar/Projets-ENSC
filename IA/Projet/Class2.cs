@@ -79,7 +79,7 @@ namespace ProjetIA2022
                             if ((newnode3.x == Form1.xbouee2) && (newnode3.y == Form1.ybouee2)
                                 && newnode3.bouee1)
                                 newnode3.bouee2 = true;
-                              lsucc.Add(newnode3);
+                            lsucc.Add(newnode3);
                             }
                     }
 
@@ -99,23 +99,28 @@ namespace ProjetIA2022
             // matrice[x,y] indique le type de case  (-1 si bouée, 0 si rien, -2 si obstacle)
 
             double cost = 0;
-            cost = ShortestPathFrom("s",1);
+            cost = ShortestPathTo(1);
+
             return (cost);    
             }
 
-        public double ShortestPathFrom(string obj, int sens)
+        public double ShortestPathTo(int sens)
             {
             int[] goal;
-            if (obj == "start")
+            bool b1=bouee1;
+            bool b2=bouee2;
+            if (x == Form1.xbouee1&&y==Form1.ybouee1)
             {
-                goal = getPreviousGoal();
+                b1=true;
             }
-            else
+            if(x== Form1.xbouee2&&y==Form1.ybouee2)
             {
-                goal= getNextGoal();
+                b2 =true;
             }
-            
+            goal= getNextGoal(b1,b2);
+
             double time=0;
+            double time2=0;
             int sideNecessaire = Math.Abs(x - goal[0]);
             int upNecessaire=Math.Abs(y-goal[1]);
             int sensY=sens*(y-goal[1]>0?-1:1);
@@ -140,19 +145,24 @@ namespace ProjetIA2022
             {
                 time=upAndSideNecessairee*50+sideNecessaire*30+upNecessaire*50;
             }
+            bouee1 = b1;
+            bouee2 = b2;
+
             return time ;
             
             }
 
-            public int[] getNextGoal()
+            
+
+            public int[] getNextGoal(bool b1,bool b2)
             {
             int[] coords = {0,0};
-            if (!bouee1 && !bouee2)
+            if (!b1 && !b2)
             {
                 coords[0]=Form1.xbouee1;
                 coords[1]=Form1.ybouee1;
             }
-            else if (bouee1 && !bouee2)
+            else if (b1 && !b2)
             {
                 coords[0]=Form1.xbouee2;
                 coords[1]=Form1.ybouee2;

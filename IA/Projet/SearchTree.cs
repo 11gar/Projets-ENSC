@@ -62,6 +62,7 @@ namespace ProjetIA2022
                 L_Ouverts.Remove(N);
                 L_Fermes.Add(N);
 
+
                 // Il faut trouver les noeuds successeurs de N
                 this.MAJSuccesseurs(N);
                 // Inutile de retrier car les insertions ont été faites en respectant l'ordre
@@ -153,7 +154,7 @@ namespace ProjetIA2022
                 bool trouve = false;
                 int i = 0;
                 do
-                    if (NewNode.Cout_Total < N.Cout_Total)
+                    if (NewNode.Cout_Total <= N.Cout_Total)
                     {
                         L_Ouverts.Insert(i, NewNode);
                         trouve = true;

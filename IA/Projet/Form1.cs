@@ -154,11 +154,13 @@ namespace ProjetIA2022
                         {
                             Rectangle rect = new Rectangle(i * largeur, j * hauteur, largeur - 1, hauteur - 1);
                             g.FillRectangle(brush3, rect);
+                 
                         }
                         else
                           {
                              Rectangle rect = new Rectangle(i * largeur, j * hauteur, largeur - 1, hauteur - 1);
                              g.FillRectangle(brush1, rect);
+
                           }
                     }
 
@@ -269,6 +271,7 @@ namespace ProjetIA2022
             {
                 Node3 noeudouvert = (Node3)search.L_Ouverts[i];
                 rect = new Rectangle(noeudouvert.x * largeur, noeudouvert.y * hauteur, largeur - 1, hauteur - 1);
+                System.Threading.Thread.Sleep(20);
                 g.FillRectangle(brush2, rect);
             }
             // Les fermés
@@ -276,6 +279,7 @@ namespace ProjetIA2022
             {
                 Node3 noeudferme = (Node3)search.L_Fermes[i];
                 rect = new Rectangle(noeudferme.x * largeur, noeudferme.y * hauteur, largeur - 1, hauteur - 1);
+                System.Threading.Thread.Sleep(20);
                 g.FillRectangle(brush1, rect);
             }
 
