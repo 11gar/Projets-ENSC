@@ -1,4 +1,5 @@
 clear all;
+tic
 vidObj = VideoReader("vidéo.mp4");
 
 img= read(vidObj,1);
@@ -27,10 +28,10 @@ yp=y;
 
 [M1x,M2x,M3x,M4x]=formeMatrices(xp(1),yp(1),xp(2),yp(2),xp(3),yp(3),xp(4),yp(4));
 
-
-[x,y]=CorrectionRectangle(imgIndex,x,y,50,500,3);
+tic
+[x,y]=CorrectionRectangleSave(imgIndex,x,y,50,500,3);
 figure(3),imagesc(imgIndex);
-
+toc
 
 hold on
 plot(xp,yp,'color','red');
@@ -46,7 +47,7 @@ line([x(1),x(4)],[y(1),y(4)])
 %plot(M3x(:,:,1),M3x(:,:,2),'+',Color='yellow');
 %plot(M4x(:,:,1),M4x(:,:,2),'+',Color='yellow');
 hold off
-
+toc
 
 %%
 clear all;
