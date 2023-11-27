@@ -5,15 +5,12 @@ tic
 allframes = read(vidObj);
 toc
 whos allframes
-vid=read(vidObj,start);
-whos vid
-%clear vidObj
-%vidObj = VideoReader(path);
-%vidframe=read(vidObj, [start Inf]);
-tailleVid=size(vid,4);
+%vid=read(vidObj,start);
+%whos vid
+tailleVid=size(allframes(:,:,:,1),4);
 coords=zeros(tailleVid,4,2);
-[~,map]=rgb2ind(vid,255);
-briqueBlanche=findexclusivecolor(vid,165,170,185,15,15,15);
+[~,map]=rgb2ind(allframes(:,:,:,1),255);
+briqueBlanche=findexclusivecolor(allframes(:,:,:,1),165,170,185,15,15,15);
 imgIndex=rgb2ind(briqueBlanche,255);
 figure(1),image(imgIndex),colormap(map);
 [x,y]=ginput(4);
