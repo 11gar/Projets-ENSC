@@ -15,7 +15,7 @@ for i=start:start+5
     disp(i);
     disp("-------------------------------")
     img=read(vidObj,i);
-    [tempx,tempy]=CorrectionRectangleSave(img,x,y,25,500,3);
+    [tempx,tempy]=CorrectionRectangleSave(img,x,y,75,500,3);
     coords(i,1,1)=tempx(1);
     coords(i,1,2)=tempy(1);
     coords(i,2,1)=tempx(2);
