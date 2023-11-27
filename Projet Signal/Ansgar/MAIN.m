@@ -28,7 +28,7 @@ yp=y;
 [M1x,M2x,M3x,M4x]=formeMatrices(xp(1),yp(1),xp(2),yp(2),xp(3),yp(3),xp(4),yp(4));
 
 
-[x,y]=CorrectionRectangle(imgIndex,x,y,50,500,3);
+[x,y]=CorrectionRectangleSave(imgIndex,x,y,75,500,3);
 figure(3),imagesc(imgIndex);
 
 

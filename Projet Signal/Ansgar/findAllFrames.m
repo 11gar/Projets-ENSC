@@ -11,10 +11,14 @@ figure(1),image(imgIndex),colormap(map);
 [x,y]=ginput(4);
 x=round(x);
 y=round(y);
+
 for i=start:start+5
+    img=read(vidObj,i);
+    briqueBlanche=findexclusivecolor(img,165,170,185,15,15,15);
+    img=rgb2ind(briqueBlanche,255); 
     disp(i);
     disp("-------------------------------")
-    img=read(vidObj,i);
+    
     [tempx,tempy]=CorrectionRectangleSave(img,x,y,75,500,3);
     coords(i,1,1)=tempx(1);
     coords(i,1,2)=tempy(1);
@@ -26,11 +30,11 @@ for i=start:start+5
     coords(i,4,2)=tempy(4);
     x=tempx;
     y=tempy;
-    figure;
-    hold on
-    imagesc(img);
-    plot(x,y);
-    hold off
+    %figure;
+    %hold on
+    %imagesc(img);
+    %plot(x,y);
+    %hold off
 end
 
 

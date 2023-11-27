@@ -49,13 +49,26 @@ for i=1:tours
     [X1,Y1]=GradientTheorique(img,[params(1),params(3),params(5),params(7)],[params(2),params(4),params(6),params(8)]);
     k=randi(8);
     ki=k;
-    if(mod(ki,2)==1)
-        ki=k+1;
+    if(mod(ki,2)==0)
+        ki=k-1;
     end
-    i1=mod(ki,8)+1;
-    i2=mod(ki+1,8)+1;
-    i3=mod(ki+2,8)+1;
-    i4=mod(ki+3,8)+1;
+    i1=ki-2;
+    i2=ki-1;
+    i3=ki;
+    i4=ki+1;
+    if(i1<=0)
+        i1=i1+8;
+    end
+    if(i2<=0)
+        i2=i2+8;
+    end
+    if(i3>8)
+        i3=i3-8;
+    end
+    if(i4>8)
+        i4=i4-8;
+    end
+
     for x=1:15
         for y=1:101
         CoteInteret(i1,x,y)=X2(M(x,y,2,ceil(i1/2)),M(x,y,1,ceil(i1/2)));
