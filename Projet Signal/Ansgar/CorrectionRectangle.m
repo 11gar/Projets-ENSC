@@ -50,12 +50,12 @@ for i=1:tours
     k=randi(8);
     ki=k;
     if(mod(ki,2)==1)
-        ki=k-1;
+        ki=k+1;
     end
-    i1=mod(ki,8)+1
-    i2=mod(ki+1,8)+1
-    i3=mod(ki+2,8)+1
-    i4=mod(ki+3,8)+1
+    i1=mod(ki,8)+1;
+    i2=mod(ki+1,8)+1;
+    i3=mod(ki+2,8)+1;
+    i4=mod(ki+3,8)+1;
     for x=1:15
         for y=1:101
         CoteInteret(i1,x,y)=X2(M(x,y,2,ceil(i1/2)),M(x,y,1,ceil(i1/2)));
