@@ -1,7 +1,7 @@
 function [x2,y2] = CorrectionRectangle(img,x,y, tours, lambda, Eps)
 
 [X2,Y2]=GradientEffectif(img);
-params=[x,y];
+params=[x(1),y(1),x(2),y(2),x(3),y(3),x(4),y(4)];
 
 [M1,M2,M3,M4]=formeMatrices(x(1),y(1),x(2),y(2),x(3),y(3),x(4),y(4));
 M=cat(4,M1,M2, M3, M4);
@@ -50,9 +50,8 @@ for i=1:tours
     k=randi(8);
     ki=k;
     if(mod(ki,2)==1)
-        ki=k+1;
+        ki=k-1;
     end
-    
     i1=mod(ki,8)+1
     i2=mod(ki+1,8)+1
     i3=mod(ki+2,8)+1
