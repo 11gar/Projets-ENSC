@@ -1,13 +1,13 @@
 function [x2,y2] = CorrectionRectangle(img,x,y, tours, lambda, Eps)
 
 [X2,Y2]=GradientEffectif(img);
-params=[x(1) y(1) x(2) y(2) x(3) y(3) x(4) y(4)];
+params=[x,y];
 
 [M1,M2,M3,M4]=formeMatrices(x(1),y(1),x(2),y(2),x(3),y(3),x(4),y(4));
 M=cat(4,M1,M2, M3, M4);
 
 
-Cote1InteretX=zeros(15,101);
+    Cote1InteretX=zeros(15,101);
     Cote2InteretX=zeros(15,101);
     Cote3InteretX=zeros(15,101);
     Cote4InteretX=zeros(15,101);

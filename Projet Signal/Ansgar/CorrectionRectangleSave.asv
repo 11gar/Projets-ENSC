@@ -1,4 +1,5 @@
 function [x2,y2] = CorrectionRectangleSave(img,x,y, tours, lambda, Eps)
+[X1,Y1]=GradientTheorique(img,x,y);
 [X2,Y2]=GradientEffectif(img);
 
 params=[x,y];
@@ -61,7 +62,7 @@ for i=1:tours
     k=randi(8);
     params2=params;
     params2(k)=params(k)+Eps;
-    [X1,Y1]=GradientTheorique(img,params2(:,1),params2(:,2));
+    [X1,Y1]=GradientTheorique(imgIndex,params2(:,1),params2(:,2));
 
     for x=1:15
         for y=1:101
