@@ -1,7 +1,15 @@
 function coords = findAllFrames(path,start)
 disp("-----------START-------------")
 vidObj = VideoReader(path);
+tic
+allframes = read(vidObj);
+toc
+whos allframes
 vid=read(vidObj,start);
+whos vid
+%clear vidObj
+%vidObj = VideoReader(path);
+%vidframe=read(vidObj, [start Inf]);
 tailleVid=size(vid,4);
 coords=zeros(tailleVid,4,2);
 [~,map]=rgb2ind(vid,255);
@@ -14,7 +22,9 @@ y=round(y);
 
 for i=start:start+5
     tic
-    img=read(vidObj,i);
+    img=allframes(:,:,:,i);
+    toc
+    tic
     briqueBlanche=findexclusivecolor(img,165,170,185,15,15,15);
     img=rgb2ind(briqueBlanche,255); 
     toc
