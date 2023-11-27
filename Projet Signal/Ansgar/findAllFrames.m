@@ -13,13 +13,17 @@ x=round(x);
 y=round(y);
 
 for i=start:start+5
+    tic
     img=read(vidObj,i);
     briqueBlanche=findexclusivecolor(img,165,170,185,15,15,15);
     img=rgb2ind(briqueBlanche,255); 
+    toc
     disp(i);
     disp("-------------------------------")
-    
+    tic
     [tempx,tempy]=CorrectionRectangleSave(img,x,y,75,500,3);
+    toc
+    tic
     coords(i,1,1)=tempx(1);
     coords(i,1,2)=tempy(1);
     coords(i,2,1)=tempx(2);
@@ -30,6 +34,7 @@ for i=start:start+5
     coords(i,4,2)=tempy(4);
     x=tempx;
     y=tempy;
+    toc
     %figure;
     %hold on
     %imagesc(img);
