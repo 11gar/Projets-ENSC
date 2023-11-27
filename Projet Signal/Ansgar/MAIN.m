@@ -1,7 +1,7 @@
 clear all;
 vidObj = VideoReader("vidéo.mp4");
 
-img= read(vidObj)
+img= read(vidObj,1);
 %img=img(500:700,600:800,:);
 %img=img(20:40,120:140,:);
 [~,map]=rgb2ind(img,255);
@@ -28,7 +28,7 @@ yp=y;
 [M1x,M2x,M3x,M4x]=formeMatrices(xp(1),yp(1),xp(2),yp(2),xp(3),yp(3),xp(4),yp(4));
 
 
-[x,y]=CorrectionRectangleSave(imgIndex,x,y,75,500,3);
+[x,y]=CorrectionRectangle(imgIndex,x,y,10,500,3);
 figure(3),imagesc(imgIndex);
 
 
