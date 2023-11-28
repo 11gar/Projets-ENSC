@@ -50,6 +50,6 @@ hold off
 
 %%
 clear all;
-findAllFrames("vidéo.mp4",100);
+coords=findAllFrames("vidéo.mp4",1);
 
 

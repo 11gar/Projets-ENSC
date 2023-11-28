@@ -7,7 +7,7 @@ toc
 whos allframes
 %vid=read(vidObj,start);
 %whos vid
-tailleVid=size(allframes(:,:,:,1),4);
+tailleVid=size(allframes,4);
 coords=zeros(tailleVid,4,2);
 [~,map]=rgb2ind(allframes(:,:,:,1),255);
 briqueBlanche=findexclusivecolor(allframes(:,:,:,1),165,170,185,15,15,15);
@@ -17,7 +17,7 @@ figure(1),image(imgIndex),colormap(map);
 x=round(x);
 y=round(y);
 
-for i=start:start+5
+for i=start:tailleVid
     tic
     img=allframes(:,:,:,i);
     toc
