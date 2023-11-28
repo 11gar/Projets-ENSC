@@ -49,5 +49,4 @@ for i=start:tailleVid
     %hold off
 end
 
-
 end
