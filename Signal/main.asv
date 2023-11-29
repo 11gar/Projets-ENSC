@@ -1,0 +1,35 @@
+data=load("Data/subject_01.mat");
+data=data.SIGNAL;
+elec1=data(:,16);
+
+timestamp1=find(data(:,18)>0);
+timestamp2=find(data(:,19)>0);
+
+blocsFermes=zeros(length(timestamp1),5121);
+blocsOuverts=zeros(length(timestamp1),5121);
+disp("---------");
+for i=1:length(timestamp1)
+    blocsFermes(i,:)=data(timestamp1(i):timestamp1(i)+5120,16);
+    blocsOuverts(i,:)=data(timestamp2(i):timestamp2(i)+5120,16);
+end
+
+%Normalisation
+
+blocsFftOuverts=[];
+blocsFftFermes=[];
+
+for i=1:length(timestamp1)
+    blocsFermes(i,:)=(blocsFermes(i,:)-min(blocsFermes(i,:)))/(max(blocsFermes(i,:)-min(blocsFermes(i,:))));
+    blocsOuverts(i,:)=(blocsOuverts(i,:)-min(blocsOuverts(i,:)))/(max(blocsOuverts(i,:)-min(blocsOuverts(i,:))));
+
+    blocsFftOuverts(i,:)=abs(fft(blocsOuverts(i,:),512));
+    blocsFftFermes(i,:)=abs(fft(blocsOuverts(i,:),));
+    
+end
+
+figure(1);
+plot(blocsFftFermes(1,:));
+axis([6 15 0 1000]);
+
+
+
