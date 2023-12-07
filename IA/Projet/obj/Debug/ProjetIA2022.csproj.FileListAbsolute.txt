@@ -9,3 +9,13 @@ C:\Users\awetzel\Desktop\Projets-ENSC\IA\Projet\obj\Debug\ProjetIA2022.csproj.Ge
 C:\Users\awetzel\Desktop\Projets-ENSC\IA\Projet\obj\Debug\ProjetIA2022.csproj.CoreCompileInputs.cache
 C:\Users\awetzel\Desktop\Projets-ENSC\IA\Projet\obj\Debug\ProjetIA2022.exe
 C:\Users\awetzel\Desktop\Projets-ENSC\IA\Projet\obj\Debug\ProjetIA2022.pdb
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\IA\Projet\bin\Debug\ProjetIA2022.exe.config
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\IA\Projet\bin\Debug\ProjetIA2022.exe
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\IA\Projet\bin\Debug\ProjetIA2022.pdb
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\IA\Projet\obj\Debug\ProjetIA2022.csproj.AssemblyReference.cache
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\IA\Projet\obj\Debug\ProjetIA2022.Form1.resources
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\IA\Projet\obj\Debug\ProjetIA2022.Properties.Resources.resources
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\IA\Projet\obj\Debug\ProjetIA2022.csproj.GenerateResource.cache
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\IA\Projet\obj\Debug\ProjetIA2022.csproj.CoreCompileInputs.cache
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\IA\Projet\obj\Debug\ProjetIA2022.exe
+C:\Users\Ansgar\Desktop\2A\Projets-ENSC\IA\Projet\obj\Debug\ProjetIA2022.pdb

@@ -40,7 +40,7 @@ namespace ProjetIA2022
                  // faisable, on met 50s par case
                 if ((N2bis.y < y) && (N2bis.x != x))
                     return 50;
-                else // Quatrième cas, la case visée est juste en dessous => vent arrière, 20 secondes par case 
+                else // Quatrième cas, la case visée est juste en dessous => vent arrière, 21 secondes par case 
                 if ((N2bis.x == x) && (N2bis.y > y))
                     return 21;
                 else // Cinquième cas, la case visée est vent 3/4 arrière, optimal pour le bateau => 20s par case
@@ -72,9 +72,15 @@ namespace ProjetIA2022
                                 newnode3.y = y + dy;
                                 newnode3.bouee1 = bouee1;
                                 newnode3.bouee2 = bouee2;
+                            System.Diagnostics.Debug.WriteLine("ce nooeaud a déja rencontré bouee1? " + bouee1);
+
                             // Si on est sur la bouee1
                             if ((newnode3.x == Form1.xbouee1) && (newnode3.y == Form1.ybouee1))
+                            {
+                                
                                 newnode3.bouee1 = true;
+                            }
+                            
                             // Si on est sur la bouee2
                             if ((newnode3.x == Form1.xbouee2) && (newnode3.y == Form1.ybouee2)
                                 && newnode3.bouee1)
@@ -107,25 +113,26 @@ namespace ProjetIA2022
         public double ShortestPathTo(int sens)
             {
             int[] goal;
-            bool b1=bouee1;
-            bool b2=bouee2;
-            if (x == Form1.xbouee1&&y==Form1.ybouee1)
+            double time = 0;
+            double time2 = 0;
+            System.Diagnostics.Debug.WriteLine(x + " " + y+" "+this.bouee1);
+            if (!bouee1)
             {
-                b1=true;
+                time2+=100000;
             }
-            if(x== Form1.xbouee2&&y==Form1.ybouee2)
+            if(!bouee2)
             {
-                b2 =true;
+                time2+=100000;
             }
-            goal= getNextGoal(b1,b2);
 
-            double time=0;
-            double time2=0;
+            goal = getNextGoal(bouee1,bouee2);
+
+            
             int sideNecessaire = Math.Abs(x - goal[0]);
             int upNecessaire=Math.Abs(y-goal[1]);
             int sensY=sens*(y-goal[1]>0?-1:1);
             int upAndSideNecessairee=0;
-            if(sideNecessaire>upNecessaire)
+            if (sideNecessaire>upNecessaire)
             {
                 upAndSideNecessairee = upNecessaire;
                 sideNecessaire = sideNecessaire-upNecessaire;
@@ -145,10 +152,9 @@ namespace ProjetIA2022
             {
                 time=upAndSideNecessairee*50+sideNecessaire*30+upNecessaire*50;
             }
-            bouee1 = b1;
-            bouee2 = b2;
 
-            return time ;
+            System.Diagnostics.Debug.WriteLine(time+time2);
+            return time+time2;
             
             }
 
@@ -162,16 +168,18 @@ namespace ProjetIA2022
                 coords[0]=Form1.xbouee1;
                 coords[1]=Form1.ybouee1;
             }
-            else if (b1 && !b2)
+            if (b1 && !b2)
             {
                 coords[0]=Form1.xbouee2;
                 coords[1]=Form1.ybouee2;
             }
-            else
+            if(b1 && b2)
             {
                 coords[0]=Form1.xfinal;
                 coords[1]=Form1.yfinal;
             }
+
+            System.Diagnostics.Debug.WriteLine(coords[0]);
 
             return coords;
             }
